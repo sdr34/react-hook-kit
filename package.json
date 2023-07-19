@@ -1,6 +1,6 @@
 {
   "name": "react-hook-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.",
   "main": "index.js",
   "scripts": {
