@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sdr34/react-custom-hooks.git"
+    "url": "git+https://github.com/sdr34/react-hook-kit.git"
   },
   "keywords": [
     "React",
