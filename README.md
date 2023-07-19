@@ -1,9 +1,9 @@
 # React Hook Kit
 
-[![NPM version](https://img.shields.io/npm/v/react-custom-hooks.svg?style=flat)](https://www.npmjs.com/package/react-custom-hooks)
-[![Open Issues](https://img.shields.io/github/issues/your-github-username/react-custom-hooks.svg?style=flat)](https://github.com/sdr34/react-custom-hooks/issues)
-[![Contributors](https://img.shields.io/github/contributors/sdr34/react-custom-hooks.svg?style=flat)](https://github.com/sdr34/react-custom-hooks/graphs/contributors)
-[![License](https://img.shields.io/github/license/sdr34/react-custom-hooks.svg?style=flat)](https://github.com/sdr34/react-custom-hooks/LICENSE)
+[![NPM version](https://img.shields.io/npm/v/react-custom-hooks.svg?style=flat)](https://www.npmjs.com/package/react-hook-kit)
+[![Open Issues](https://img.shields.io/github/issues/your-github-username/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/issues)
+[![Contributors](https://img.shields.io/github/contributors/sdr34/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/graphs/contributors)
+[![License](https://img.shields.io/github/license/sdr34/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/LICENSE)
 
 React Hook Kit is a library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.
 
@@ -17,7 +17,7 @@ npm install react-hook-kit
 
 useForm: A hook for handling form state and validation.
 
-##Usage
+## Usage
 
 useForm
 
