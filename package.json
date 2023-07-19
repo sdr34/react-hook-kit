@@ -1,0 +1,40 @@
+{
+  "name": "react-custom-hooks",
+  "version": "1.0.0",
+  "description": "A library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdr34/react-custom-hooks.git"
+  },
+  "keywords": [
+    "React",
+    "React Hooks",
+    "Custom Hooks",
+    "TypeScript",
+    "JavaScript",
+    "Web Development",
+    "useForm",
+    "useFetch",
+    "useLocalStorage",
+    "useDebounce",
+    "useThrottle",
+    "useOnClickOutside"
+  ],
+  "author": "Dmitry Gorschkov (dmgorschkov@mail.ru)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdr34/react-custom-hooks/issues"
+  },
+  "homepage": "https://github.com/sdr34/react-custom-hooks#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/react": "^18.2.15",
+    "react": "^18.2.0"
+  }
+}

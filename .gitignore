@@ -1,0 +1,24 @@
+# Игнорировать файлы конфигурации IDE и редактора
+/.idea
+*.iml
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Игнорировать директорию node_modules
+/node_modules
+
+# Игнорировать логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Игнорировать собранные файлы
+/dist
+/build
+
+# Игнорировать файлы TypeScript
+*.tsbuildinfo
+
+# Игнорировать файлы конфигурации TypeScript
+tsconfig.json
