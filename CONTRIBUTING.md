@@ -1,4 +1,4 @@
-# Contributing to React Custom Hooks
+# Contributing to React Hook Kit
 
 First off, thank you for considering contributing to React Custom Hooks. It's people like you that make React Custom Hooks such a great tool.
 
@@ -16,4 +16,3 @@ A good branch name would be (where issue #325 is the ticket you're working on):
 git checkout -b 325-add-japanese-localization
 
 ```
-
