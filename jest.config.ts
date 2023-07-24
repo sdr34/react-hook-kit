@@ -7,5 +7,5 @@ export default {
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 	testTimeout: 20000, // Установка таймаута в 10 секунд для всех тестов
 	verbose: true,
-    testEnvironment: 'jsdom',
+	testEnvironment: 'jsdom',
 };

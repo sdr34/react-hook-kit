@@ -1,7 +1,7 @@
 # React Hook Kit
 
-[![NPM version](https://img.shields.io/npm/v/react-custom-hooks.svg?style=flat)](https://www.npmjs.com/package/react-hook-kit)
-[![Open Issues](https://img.shields.io/github/issues/your-github-username/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/issues)
+[![NPM version](https://img.shields.io/npm/v/react-hook-kit.svg?style=flat)](https://www.npmjs.com/package/react-hook-kit)
+[![Open Issues](https://img.shields.io/github/issues/sdr34/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/issues)
 [![Contributors](https://img.shields.io/github/contributors/sdr34/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/graphs/contributors)
 [![License](https://img.shields.io/github/license/sdr34/react-hook-kit.svg?style=flat)](https://github.com/sdr34/react-hook-kit/LICENSE)
 
