@@ -1,10 +1,10 @@
 import { useForm } from './hooks/useForm';
-//import useFetch from './hooks/useFetch';
-//import useLocalStorage from './hooks/useLocalStorage';
+import useLocalStorage from './hooks/useLocalStorage';
+// import useFetch from './hooks/useFetch';
 
 export {
 	useForm,
-	//	useFetch,
-	//	useLocalStorage,
-	// Добавьте другие пользовательские хуки здесь, если они есть
+	useLocalStorage,
+	// useFetch,
+	// Add other custom hooks here if they exist
 };
