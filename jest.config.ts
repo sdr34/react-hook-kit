@@ -8,4 +8,5 @@ export default {
 	testTimeout: 20000, // Установка таймаута в 10 секунд для всех тестов
 	verbose: true,
 	testEnvironment: 'jsdom',
+    setupFilesAfterEnv: ['./src/setupTests.ts'],
 };

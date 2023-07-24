@@ -1,5 +1,5 @@
 import { useForm } from './hooks/useForm';
-import useLocalStorage from './hooks/useLocalStorage';
+import { useLocalStorage } from './hooks/useLocalStorage';
 // import useFetch from './hooks/useFetch';
 
 export {
