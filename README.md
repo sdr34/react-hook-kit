@@ -27,7 +27,7 @@ Example usage:
 
 ```jsx
 import React from "react";
-import useForm from "react-hook-kit";
+import { useForm } from "react-hook-kit";
 
 const MyForm = () => {
   const { formState, handleChange, resetForm } = useForm({
