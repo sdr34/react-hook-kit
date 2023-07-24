@@ -1,4 +1,4 @@
-import useForm from './hooks/useForm';
+import { useForm } from './hooks/useForm';
 //import useFetch from './hooks/useFetch';
 //import useLocalStorage from './hooks/useLocalStorage';
 

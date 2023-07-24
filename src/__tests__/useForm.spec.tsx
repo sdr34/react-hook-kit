@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import useForm from '../hooks/useForm';
+import { useForm } from '../hooks/useForm';
 
 describe('useForm hook', () => {
 	it('should change formState when handleChange is called', () => {
