@@ -7,6 +7,9 @@
 
 React Hook Kit is a library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.
 
+Updates
+July 24, 2023: Added new useFetch hook.
+
 ## Installation
 
 ```bash
@@ -107,6 +110,59 @@ value: The current value associated with the provided key in localStorage.
 setValue: A function that accepts a new value. When this function is called, the new value is saved in localStorage under the provided key, and the component is re-rendered.
 removeValue: A function that removes the value associated with the provided key from localStorage and updates the component.
 checkIfKeyExists: A function that checks if the provided key exists in localStorage and returns a boolean.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+Using useFetch
+useFetch is a custom hook that simplifies fetching data from an API.
+
+```TypeScript
+
+const { data, isLoading, error } = useFetch(url, options);
+
+```
+
+Parameters:
+
+url - A string representing the URL of the resource you want to fetch.
+options - An optional object of parameters for the fetch function.
+Return Value:
+
+An object with three properties:
+
+data - The data fetched from the API. If the data hasn't loaded yet, this will be null.
+isLoading - A boolean that indicates whether the data is currently loading.
+error - If there was an error while fetching the data, this will be an Error object. Otherwise, it will be null.
+Example:
+
+Here is an example of how to use useFetch in a component to fetch data from a JSON API.
+
+```tsx
+import { useFetch } from "./useFetch";
+
+function MyComponent() {
+  const { data, isLoading, error } = useFetch("https://api.example.com/data");
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  return (
+    <div>
+      <h1>Data from API:</h1>
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+    </div>
+  );
+}
+```
+
+In this example, MyComponent uses useFetch to load data from https://api.example.com/data. While the data is loading, it displays a loading message. If there's an error, it displays the error message. Otherwise, it displays the fetched data.
 
 ## Testing
 
