@@ -9,5 +9,6 @@ export default {
 	verbose: true,
 	testEnvironment: 'jsdom',
     setupFilesAfterEnv: ['./src/setupTests.ts'],
-	"moduleResolution": "node",
+	moduleResolution: "node",
+	jsx: "react",
 };

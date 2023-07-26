@@ -23,7 +23,7 @@ describe('useForm hook', () => {
 				target: {
 					name: 'testField',
 					value: 'new value',
-				} as any, // TypeScript will allow this assertion
+				}, // TypeScript will allow this assertion
 			} as React.ChangeEvent<HTMLInputElement>);
 		});
 
