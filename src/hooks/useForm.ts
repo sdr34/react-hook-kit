@@ -10,22 +10,21 @@ interface UseFormReturn {
 	resetForm: () => void;
 }
 
-export function useForm(initialState: InitialFormState): UseFormReturn  {
-  const [formState, setFormState] = useState<InitialFormState>(initialState);
+export function useForm(initialState: InitialFormState): UseFormReturn {
+	const [formState, setFormState] = useState<InitialFormState>(initialState);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { name, value } = e.target;
-    setFormState(prevState => ({ ...prevState, [name]: value }));
-  };
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+		const { name, value } = e.target;
+		setFormState((prevState) => ({ ...prevState, [name]: value }));
+	};
 
-  const resetForm = (): void => {
-    setFormState(initialState);
-  };
+	const resetForm = (): void => {
+		setFormState(initialState);
+	};
 
-  return {
-    formState,
-    handleChange,
-    resetForm,
-  };
+	return {
+		formState,
+		handleChange,
+		resetForm,
+	};
 }
-
