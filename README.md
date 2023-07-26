@@ -213,7 +213,7 @@ This hook is fully tested with Jest and React Testing Library.
 Here is a simple usage example:
 
 ```jsx
-import usePrevious from "react-hook-kit";
+import { usePrevious } from "react-hook-kit";
 
 const TestComponent = () => {
   const [count, setCount] = useState(0);
@@ -231,6 +231,78 @@ const TestComponent = () => {
       <button onClick={() => setCount(count + 1)}>+</button>
     </div>
   );
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# useInterval Hook
+
+## Description
+
+`useInterval` is a custom React hook that should be implemented to allow the execution of a function at specified, regular intervals. This would be especially useful for features that require periodic updates, like countdown timers or auto-refresh features.
+
+## Usage
+
+Here is a simple usage example:
+
+```tsx
+import { useInterval } from 'react-hook-kit'; // Путь к вашему файлу с хуком
+
+const CountdownTimer = () => {
+  const [count, setCount] = useState<number>(10);
+
+  useInterval(() => {
+    setCount((prevCount) => prevCount - 1);
+  }, 1000);
+
+  return <div>{count}</div>;
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# useTimeout Hook
+
+## Description
+
+`useTimeout` is a custom React hook that would be used to delay the execution of a function by a specified amount of time. This could be useful for a variety of scenarios where a delay in function execution is necessary, like in the case of toast notifications or timed redirects.
+
+## Usage
+
+Here is a simple usage example:
+
+```tsx
+import { useTimeout } from "react-hook-kit";
+
+const DelayedFunction = () => {
+  const [showMessage, setShowMessage] = useState<boolean>(false);
+
+  useTimeout(() => {
+    setShowMessage(true);
+  }, 2000);
+
+  return <div>{showMessage && <p>Hello, World!</p>}</div>;
 };
 ```
 
