@@ -168,6 +168,28 @@ In this example, MyComponent uses useFetch to load data from https://api.example
 
 This hook is fully tested with Jest and React Testing Library.
 
+# useOnClickOutside Hook
+
+## Description
+
+`useOnClickOutside` is a custom React hook that triggers a callback function when a click event occurs outside of one or more specified elements. It's useful for scenarios like closing modals, dropdown menus, or popups when the user clicks anywhere else on the page.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import { useOnClickOutside } from 'react-hook-kit';
+
+const TestComponent = ({ callback }: { callback: () => void }) => {
+	const ref = React.useRef<HTMLElement | null>(null);
+
+	useOnClickOutside([ref], callback);
+
+	return <div ref={ref}>Test Element</div>;
+};
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
