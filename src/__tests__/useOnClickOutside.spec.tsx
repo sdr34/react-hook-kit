@@ -5,7 +5,7 @@ import { useOnClickOutside } from '../hooks/useOnClickOutside';
 
 const TestComponent = ({ callback }: { callback: () => void }): JSX.Element => {
 	const ref = React.useRef<HTMLDivElement | null>(null);
-	useOnClickOutside([ref], callback);
+	useOnClickOutside(ref, callback);
 	return <div ref={ref}>Test Element</div>;
 };
 
