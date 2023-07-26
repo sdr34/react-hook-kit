@@ -246,7 +246,7 @@ This project is licensed under the MIT License.
 
 This hook is fully tested with Jest and React Testing Library.
 
-# usePrevious Hook
+# useInterval Hook
 
 ## Description
 
