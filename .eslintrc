@@ -1,30 +1,33 @@
 {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint"],
-  "extends": [
-    "plugin:react/recommended",
-    "eslint:recommended",
-    "plugin:eslint-plugin/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "rules": {
-    "no-empty-function": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-unused-vars": ["off"],
-    "@typescript-eslint/explicit-function-return-type": ["warn"],
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "trailingComma": "all",
-        "useTabs": true,
-        "semi": true,
-        "bracketSpasing": true,
-        "printWidth": 100,
-        "endOfline": "auto"
-      }
-    ]
-  }
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["react", "@typescript-eslint"],
+	"extends": [
+		"plugin:react/recommended",
+		"eslint:recommended",
+		"plugin:eslint-plugin/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
+	"settings": {
+		"react": { "version": "detect" }
+	},
+	"rules": {
+		"no-empty-function": "off",
+		"@typescript-eslint/ban-types": "off",
+		"@typescript-eslint/no-unused-vars": ["off"],
+		"@typescript-eslint/explicit-function-return-type": ["warn"],
+		"prettier/prettier": [
+			"error",
+			{
+				"singleQuote": true,
+				"trailingComma": "all",
+				"useTabs": true,
+				"semi": true,
+				"bracketSpasing": true,
+				"printWidth": 100,
+				"endOfline": "auto"
+			}
+		]
+	}
 }
