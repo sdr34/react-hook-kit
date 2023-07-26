@@ -168,6 +168,28 @@ In this example, MyComponent uses useFetch to load data from https://api.example
 
 This hook is fully tested with Jest and React Testing Library.
 
+# useOnClickOutside Hook
+
+## Description
+
+`useOnClickOutside` is a custom React hook that triggers a callback function when a click event occurs outside of one or more specified elements. It's useful for scenarios like closing modals, dropdown menus, or popups when the user clicks anywhere else on the page.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import { useOnClickOutside } from 'react-hook-kit';
+
+const TestComponent = ({ callback }: { callback: () => void }) => {
+	const ref = React.useRef<HTMLElement | null>(null);
+
+	useOnClickOutside([ref], callback);
+
+	return <div ref={ref}>Test Element</div>;
+};
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
@@ -175,3 +197,51 @@ Contributions are welcome! If you have any ideas, improvements, or bug fixes, pl
 ## License
 
 This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# usePrevious Hook
+
+## Description
+
+`usePrevious` is a custom React hook that would be used to capture and return the previous value of a variable from the last render. This could be useful in a variety of scenarios where tracking previous state or prop values is necessary.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import usePrevious from "react-hook-kit";
+
+const TestComponent = () => {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+
+  useEffect(() => {
+     console.log("Current number:", count);
+     console.log("Previous number:", prevCount);
+  }, [count, prevCount]);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
