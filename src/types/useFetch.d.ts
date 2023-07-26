@@ -1,7 +1,7 @@
 type FetchResult<T> = {
-  data: T | null;
-  isLoading: boolean;
-  error: Error | null;
+	data: T | null;
+	isLoading: boolean;
+	error: Error | null;
 };
 
 declare function useFetch<T = unknown>(url: string, options?: RequestInit): FetchResult<T>;

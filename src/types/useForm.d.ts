@@ -13,4 +13,3 @@ export interface UseFormReturn {
 }
 
 export default function useForm(initialState: InitialFormState): UseFormReturn;
-

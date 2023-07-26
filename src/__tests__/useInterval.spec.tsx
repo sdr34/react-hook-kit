@@ -1,29 +1,29 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useInterval} from '../hooks/useInterval';
+import { useInterval } from '../hooks/useInterval';
 
 describe('useInterval', () => {
-  it('should execute the callback at regular intervals', () => {
-    jest.useFakeTimers();
+	it('should execute the callback at regular intervals', () => {
+		jest.useFakeTimers();
 
-    const callback = jest.fn();
-    const delay = 1000;
-    const { result } = renderHook(() => useInterval(callback, delay));
+		const callback = jest.fn();
+		const delay = 1000;
+		const { result } = renderHook(() => useInterval(callback, delay));
 
-    expect(callback).not.toBeCalled();
+		expect(callback).not.toBeCalled();
 
-    act(() => {
-      jest.advanceTimersByTime(delay);
-    });
+		act(() => {
+			jest.advanceTimersByTime(delay);
+		});
 
-    expect(callback).toBeCalled();
-    expect(callback).toHaveBeenCalledTimes(1);
+		expect(callback).toBeCalled();
+		expect(callback).toHaveBeenCalledTimes(1);
 
-    act(() => {
-      jest.advanceTimersByTime(delay);
-    });
+		act(() => {
+			jest.advanceTimersByTime(delay);
+		});
 
-    expect(callback).toHaveBeenCalledTimes(2);
+		expect(callback).toHaveBeenCalledTimes(2);
 
-    jest.useRealTimers();
-  });
+		jest.useRealTimers();
+	});
 });
