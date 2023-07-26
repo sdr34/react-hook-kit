@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useDebounce } from '../hooks/useDebounce'; // Путь к вашему файлу с хуками  
+import { useDebounce } from '../hooks/useDebounce';
 
 describe('useDebounce', () => {
     it('should debounce the function call', () => {
