@@ -300,7 +300,7 @@ const DelayedFunction = () => {
 
   useTimeout(() => {
     setShowMessage(true);
-  }, 2000); // Запускает функцию через 2 секунды
+  }, 2000);g
 
   return <div>{showMessage && <p>Hello, World!</p>}</div>;
 };
