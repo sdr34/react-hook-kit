@@ -1,28 +1,26 @@
-import { RefObject, useEffect, MouseEvent as ReactMouseEvent } from 'react';
+import * as React from 'react';
+import { useEffect, useRef } from 'react';
 
-type EventType = MouseEvent | TouchEvent;
+type OnClickOutsideCallback = () => void;
+const useOnClickOutside = (
+  ref: React.RefObject<HTMLElement>,
+  callback: OnClickOutsideCallback
+) => {
+  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      callback?.();
+    }
+  };
 
-export const useOnClickOutside = (
-	refs: RefObject<HTMLElement>[],
-	callback: () => void,
-	condition: boolean = true,
-): void => {
-	useEffect(() => {
-		const handleClickOutside = (event: EventType): void => {
-			if (
-				condition &&
-				refs.every((ref) => ref.current && !ref.current.contains(event.target as Node))
-			) {
-				callback();
-			}
-		};
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [ref, callback]);
 
-		// Bind the listener to the document
-		const boundListener = handleClickOutside.bind(document);
-
-		document.addEventListener('mousedown', boundListener);
-		return () => {
-			document.removeEventListener('mousedown', boundListener);
-		};
-	}, [refs, callback, condition]);
 };
+
+export {useOnClickOutside};
