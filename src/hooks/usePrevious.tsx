@@ -11,5 +11,5 @@ function usePrevious<T>(value: T): T | undefined {
   return ref.current;
 }
 
-export default usePrevious;
+export {usePrevious};
 
