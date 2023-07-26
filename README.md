@@ -197,3 +197,51 @@ Contributions are welcome! If you have any ideas, improvements, or bug fixes, pl
 ## License
 
 This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# usePrevious Hook
+
+## Description
+
+`usePrevious` is a custom React hook that would be used to capture and return the previous value of a variable from the last render. This could be useful in a variety of scenarios where tracking previous state or prop values is necessary.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import usePrevious from "react-hook-kit";
+
+const TestComponent = () => {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+
+  useEffect(() => {
+     console.log("Current number:", count);
+     console.log("Previous number:", prevCount);
+  }, [count, prevCount]);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
