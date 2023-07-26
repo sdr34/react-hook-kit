@@ -4,7 +4,7 @@ First off, thank you for considering contributing to React Custom Hooks. It's pe
 
 ## Where do I go from here?
 
-If you've noticed a bug or have a feature request, [make one](https://github.com/sdr34/react-custom-hooks/issues/new)! It's generally best if you get confirmation of your bug or approval for your feature request this way before starting to code.
+If you've noticed a bug or have a feature request, [make one](https://github.com/sdr34/react-hook-kit/issues/new)! It's generally best if you get confirmation of your bug or approval for your feature request this way before starting to code.
 
 ## Fork & create a branch
 

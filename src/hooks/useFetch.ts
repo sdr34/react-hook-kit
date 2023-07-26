@@ -3,69 +3,67 @@ import { useState, useEffect, useRef } from 'react';
 const cache = new Map();
 
 export const useFetch = (url: string, options?: RequestInit) => {
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
+	const [data, setData] = useState(null);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState<Error | null>(null);
 
-  // Создаем ref для хранения отметок времени начала и окончания загрузки.
-  const loadTimestampRef = useRef<number | null>(null);
-  const loadEndTimestampRef = useRef<number | null>(null);
+	// Создаем ref для хранения отметок времени начала и окончания загрузки.
+	const loadTimestampRef = useRef<number | null>(null);
+	const loadEndTimestampRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
+	useEffect(() => {
+		const controller = new AbortController();
+		const signal = controller.signal;
 
-    const fetchData = async () => {
-      loadTimestampRef.current = Date.now();
-      setIsLoading(true);
+		const fetchData = async () => {
+			loadTimestampRef.current = Date.now();
+			setIsLoading(true);
 
-      if (cache.get(url)) {
-        const data = cache.get(url);
-        loadEndTimestampRef.current = Date.now();
-        
-        // Отметим таймер так, чтобы обеспечить установку isLoading в true.
-        const delay = Math.max(0, 100 - (loadEndTimestampRef.current - loadTimestampRef.current!));
+			if (cache.get(url)) {
+				const data = cache.get(url);
+				loadEndTimestampRef.current = Date.now();
 
-        setTimeout(() => {
-          if (!signal.aborted) {
-            setData(data);
-            setIsLoading(false);
-          }
-        }, delay);
+				// Отметим таймер так, чтобы обеспечить установку isLoading в true.
+				const delay = Math.max(0, 100 - (loadEndTimestampRef.current - loadTimestampRef.current!));
 
-        return;
-      }
+				setTimeout(() => {
+					if (!signal.aborted) {
+						setData(data);
+						setIsLoading(false);
+					}
+				}, delay);
 
-      try {
-        const response = await fetch(url, { signal, ...options });
+				return;
+			}
 
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
+			try {
+				const response = await fetch(url, { signal, ...options });
 
-        const data = await response.json();
-        cache.set(url, data);
+				if (!response.ok) {
+					throw new Error(`Error: ${response.status}`);
+				}
 
-        if (!signal.aborted) {
-          setData(data);
-          setIsLoading(false);
-        }
-      } catch (error) {
-        if (!signal.aborted) {
-          setError(error as Error);
-          setIsLoading(false);
-        }
-      }
-    };
+				const data = await response.json();
+				cache.set(url, data);
 
-    fetchData();
+				if (!signal.aborted) {
+					setData(data);
+					setIsLoading(false);
+				}
+			} catch (error) {
+				if (!signal.aborted) {
+					setError(error as Error);
+					setIsLoading(false);
+				}
+			}
+		};
 
-    return () => {
-      controller.abort();
-    };
+		fetchData();
 
-  }, [url, options]);
+		return () => {
+			controller.abort();
+		};
+	}, [url, options]);
 
-  return { data, isLoading, error };
+	return { data, isLoading, error };
 };
-
