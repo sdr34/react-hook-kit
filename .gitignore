@@ -21,4 +21,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 # Игнорировать файлы конфигурации TypeScript
-tsconfig.json
+# tsconfig.json
