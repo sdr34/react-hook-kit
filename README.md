@@ -256,7 +256,7 @@ This hook is fully tested with Jest and React Testing Library.
 
 Here is a simple usage example:
 
-```tsx
+```jsx
 import { useInterval } from 'react-hook-kit'; // Путь к вашему файлу с хуком
 
 const CountdownTimer = () => {
@@ -292,7 +292,7 @@ This hook is fully tested with Jest and React Testing Library.
 
 Here is a simple usage example:
 
-```tsx
+```jsx
 import { useTimeout } from "react-hook-kit";
 
 const DelayedFunction = () => {
@@ -304,6 +304,87 @@ const DelayedFunction = () => {
 
   return <div>{showMessage && <p>Hello, World!</p>}</div>;
 };
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# useDebounce Hook
+
+## Description
+
+`useDebounce` is a custom React hook that  will be used to limit the rate at which a function can fire. This is useful when we have a function that we need to execute, but we don’t want it to execute until after a certain amount of time has passed since it was last invoked.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import { useDebounce } from 'react-hook-kit';
+
+const SearchInput = () => {
+  const [query, setQuery] = useState<string>('');
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
+  };
+
+  useDebounce(() => {
+    console.log('Search:', query);
+  }, 500, [query]);
+
+  return <input type="text" value={query} onChange={handleInputChange} />;
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
+
+# useThrottle Hook
+
+## Description
+
+`useThrottle` is a custom React hook that would be used to delay the execution of a function by a specified amount of time. This could be useful for a variety of scenarios where a delay in function execution is necessary, like in the case of toast notifications or timed redirects.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import useThrottle from 'react-hook-kit';
+
+const MyComponent = () => {
+  const handleResize = () => {
+    console.log('Window resized');
+  };
+
+  useThrottle(handleResize, 500);
+
+  return (
+    <div>
+      <p>Hello World!</p>
+    </div>
+  );
+};
+
 ```
 
 ## Contributing
