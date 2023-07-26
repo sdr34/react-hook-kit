@@ -322,7 +322,7 @@ This hook is fully tested with Jest and React Testing Library.
 
 ## Description
 
-`useDebounce` is a custom React hook that  will be used to limit the rate at which a function can fire. This is useful when we have a function that we need to execute, but we don’t want it to execute until after a certain amount of time has passed since it was last invoked.
+`useDebounce` is a custom React hook that will be used to limit the rate at which a function can fire. This is useful when we have a function that we need to execute, but we don’t want it to execute until after a certain amount of time has passed since it was last invoked.
 
 ## Usage
 
@@ -362,7 +362,7 @@ This hook is fully tested with Jest and React Testing Library.
 
 ## Description
 
-`useThrottle` is a custom React hook that would be used to delay the execution of a function by a specified amount of time. This could be useful for a variety of scenarios where a delay in function execution is necessary, like in the case of toast notifications or timed redirects.
+`useThrottle` is a custom React hook that will be used to ensure that a function cannot be called more than once every X milliseconds. This can be helpful in situations where we want to make sure that a certain function is not called too often, such as a resize or scroll event listener in a web application.
 
 ## Usage
 
