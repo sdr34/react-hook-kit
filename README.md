@@ -8,7 +8,7 @@
 React Hook Kit is a library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.
 
 Updates
-July 24, 2023: Added new useFetch hook.
+July 26, 2023: Added new useThrottle hook.
 
 ## Installation
 
