@@ -8,7 +8,7 @@
 React Hook Kit is a library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.
 
 Updates
-July 24, 2023: Added new useFetch hook.
+July 26, 2023: Added new useThrottle hook.
 
 ## Installation
 
@@ -220,8 +220,8 @@ const TestComponent = () => {
   const prevCount = usePrevious(count);
 
   useEffect(() => {
-     console.log("Current number:", count);
-     console.log("Previous number:", prevCount);
+    console.log("Current number:", count);
+    console.log("Previous number:", prevCount);
   }, [count, prevCount]);
 
   return (
@@ -257,10 +257,10 @@ This hook is fully tested with Jest and React Testing Library.
 Here is a simple usage example:
 
 ```jsx
-import { useInterval } from 'react-hook-kit'; // Путь к вашему файлу с хуком
+import { useInterval } from "react-hook-kit"; // Путь к вашему файлу с хуком
 
 const CountdownTimer = () => {
-  const [count, setCount] = useState<number>(10);
+  const [count, setCount] = useState < number > 10;
 
   useInterval(() => {
     setCount((prevCount) => prevCount - 1);
@@ -296,11 +296,12 @@ Here is a simple usage example:
 import { useTimeout } from "react-hook-kit";
 
 const DelayedFunction = () => {
-  const [showMessage, setShowMessage] = useState<boolean>(false);
+  const [showMessage, setShowMessage] = useState < boolean > false;
 
   useTimeout(() => {
     setShowMessage(true);
-  }, 2000);g
+  }, 2000);
+  g;
 
   return <div>{showMessage && <p>Hello, World!</p>}</div>;
 };
@@ -369,11 +370,11 @@ This hook is fully tested with Jest and React Testing Library.
 Here is a simple usage example:
 
 ```jsx
-import useThrottle from 'react-hook-kit';
+import useThrottle from "react-hook-kit";
 
 const MyComponent = () => {
   const handleResize = () => {
-    console.log('Window resized');
+    console.log("Window resized");
   };
 
   useThrottle(handleResize, 500);
@@ -384,7 +385,6 @@ const MyComponent = () => {
     </div>
   );
 };
-
 ```
 
 ## Contributing
