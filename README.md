@@ -7,9 +7,6 @@
 
 React Hook Kit is a library of custom React hooks written in TypeScript. It includes common and useful hooks like useForm, useFetch, useLocalStorage, and others, simplifying and accelerating the development process.
 
-Updates
-July 26, 2023: Added new useThrottle hook.
-
 ## Installation
 
 ```bash
@@ -385,6 +382,29 @@ const MyComponent = () => {
     </div>
   );
 };
+```
+
+# useWindowSize Hook
+
+## Description
+
+Functionality: Tracks the size of the browser window and provides real-time width and height values.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import useWindowSize from "react-hook-kit";
+
+function Component() {
+  const { width, height } = useWindowSize();
+  return (
+    <div>
+      Window Size: {width} x {height}
+    </div>
+  );
+}
 ```
 
 ## Contributing
