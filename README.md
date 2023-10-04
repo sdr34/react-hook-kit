@@ -418,3 +418,45 @@ This project is licensed under the MIT License.
 ## Testing
 
 This hook is fully tested with Jest and React Testing Library.
+
+# useMediaQuery hook
+
+## Description
+
+Accepts a CSS media query string and an optional initial state (default is false). It returns a boolean value that indicates whether the media query is satisfied.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import React from "react";
+import useMediaQuery from "[your-package-name]";
+
+const ResponsiveComponent = () => {
+  // Using the hook to check if the viewport width is at least 768px.
+  const isWideViewport = useMediaQuery("(min-width: 768px)");
+
+  return (
+    <>
+      {isWideViewport ? (
+        <p>The viewport is wide enough!</p>
+      ) : (
+        <p>The viewport is not wide enough.</p>
+      )}
+    </>
+  );
+};
+```
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Testing
+
+This hook is fully tested with Jest and React Testing Library.
