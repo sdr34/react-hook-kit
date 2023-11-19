@@ -10,6 +10,7 @@ import { usePrevious } from './hooks/usePrevious';
 import { useThrottle } from './hooks/useThrottle';
 import { useTimeout } from './hooks/useTimeout';
 import useWindowSize from './hooks/useWindowSize';
+import { useUpdateEffect } from './hooks/useUpdateEffect';
 
 export {
 	useForm,
@@ -24,4 +25,5 @@ export {
 	useThrottle,
 	useTimeout,
 	useWindowSize,
+	useUpdateEffect,
 };

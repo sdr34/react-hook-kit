@@ -482,6 +482,36 @@ const DataFetchingComponent = () => {
 };
 ```
 
+# useUpdateEffect Hook
+
+## Description
+
+`useUpdateEffect` is a custom React hook that mimics the behavior of `useEffect` but skips the effect on the initial component mount. It triggers the effect only on subsequent updates, making it ideal for scenarios where you want to avoid running effects after the first render.
+
+## Usage
+
+Here's a simple example of using `useUpdateEffect`:
+
+```jsx
+import React, { useState } from "react";
+import useUpdateEffect from "[your-package-name]";
+
+const Component = () => {
+  const [count, setCount] = useState(0);
+
+  useUpdateEffect(() => {
+    console.log("Count updated:", count);
+  }, [count]);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
+    </div>
+  );
+};
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
