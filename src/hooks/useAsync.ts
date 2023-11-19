@@ -1,48 +1,45 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-interface UseAsyncState<T> {
+type AsyncFunction<T> = () => Promise<T>;
+
+interface UseAsyncReturn<T> {
+	execute: () => Promise<void>;
 	data: T | null;
 	isLoading: boolean;
 	error: Error | null;
 }
 
-export function useAsync<T, A extends unknown[]>(
-	asyncFunction: (...args: A) => Promise<T>,
-): UseAsyncState<T> & { execute: (...args: A) => Promise<void> } {
-	const [state, setState] = useState<UseAsyncState<T>>({
-		data: null,
-		isLoading: false,
-		error: null,
-	});
+function useAsync<T>(asyncFunction: AsyncFunction<T>, immediate = true): UseAsyncReturn<T> {
+	const [data, setData] = useState<T | null>(null);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState<Error | null>(null);
 
-	const execute = useCallback(
-		async (...args: A) => {
-			setState({
-				data: null,
-				isLoading: true,
-				error: null,
-			});
+	const execute = useCallback(async () => {
+		setIsLoading(true);
+		setData(null);
+		setError(null);
 
-			try {
-				const response = await asyncFunction(...args);
-				setState({
-					data: response,
-					isLoading: false,
-					error: null,
-				});
-			} catch (err: unknown) {
-				setState({
-					data: null,
-					isLoading: false,
-					error: err as Error,
-				});
+		try {
+			const response = await asyncFunction();
+			setData(response);
+		} catch (error) {
+			if (error instanceof Error) {
+				setError(error);
+			} else {
+				setError(new Error('An unknown error occurred'));
 			}
-		},
-		[asyncFunction],
-	);
+		} finally {
+			setIsLoading(false);
+		}
+	}, [asyncFunction]);
 
-	return {
-		...state,
-		execute,
-	};
+	useEffect(() => {
+		if (immediate) {
+			execute();
+		}
+	}, [execute, immediate]);
+
+	return { execute, data, isLoading, error };
 }
+
+export { useAsync };

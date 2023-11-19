@@ -449,6 +449,39 @@ const ResponsiveComponent = () => {
 };
 ```
 
+# useAsync hook
+
+## Description
+
+The `useAsync` hook simplifies working with asynchronous operations in React. It accepts an asynchronous function and an optional immediate flag (default is true). This hook manages the loading state, data, and errors from the asynchronous operation. It returns an object containing `data`, `isLoading`, and `error` states, along with an `execute` function to manually trigger the asynchronous operation.
+
+## Usage
+
+Here is a simple usage example:
+
+```jsx
+import React from "react";
+import { useAsync } from "react-hook-kit";
+
+const fetchData = async () => {
+  const response = await fetch("https://example.com/data");
+  return await response.json();
+};
+
+const DataFetchingComponent = () => {
+  const { data, isLoading, error, execute } = useAsync(fetchData);
+
+  return (
+    <>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error.message}</p>}
+      {data && <div>{/* Render your data here */}</div>}
+      <button onClick={execute}>Reload</button>
+    </>
+  );
+};
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
