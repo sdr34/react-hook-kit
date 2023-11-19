@@ -11,6 +11,7 @@ import { useThrottle } from './hooks/useThrottle';
 import { useTimeout } from './hooks/useTimeout';
 import useWindowSize from './hooks/useWindowSize';
 import { useUpdateEffect } from './hooks/useUpdateEffect';
+import { useHover } from './hooks/useHover';
 
 export {
 	useForm,
@@ -26,4 +27,5 @@ export {
 	useTimeout,
 	useWindowSize,
 	useUpdateEffect,
+	useHover,
 };

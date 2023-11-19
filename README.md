@@ -512,6 +512,31 @@ const Component = () => {
 };
 ```
 
+# useHover Hook
+
+## Description
+
+`useHover` is a custom React hook that enables detecting if the cursor is hovering over a specific component or element. It returns a ref to attach to the desired element and a boolean indicating whether that element is currently being hovered.
+
+## Usage
+
+Here's a simple example:
+
+```jsx
+import React from "react";
+import { useHover } from "react-hook-kit";
+
+const HoverComponent = () => {
+  const [hoverRef, isHovered] = useHover();
+
+  return (
+    <div ref={hoverRef}>
+      {isHovered ? "Cursor is over me!" : "Hover over me!"}
+    </div>
+  );
+};
+```
+
 ## Contributing
 
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, please open an issue or submit a pull request.
