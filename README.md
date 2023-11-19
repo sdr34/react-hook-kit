@@ -494,7 +494,7 @@ Here's a simple example of using `useUpdateEffect`:
 
 ```jsx
 import React, { useState } from "react";
-import useUpdateEffect from "[your-package-name]";
+import { useUpdateEffect } from "react-hook-kit";
 
 const Component = () => {
   const [count, setCount] = useState(0);
